@@ -1,13 +1,20 @@
 [gd_scene format=3 uid="uid://d2xrw5swb5xo0"]
 
-[ext_resource type="Script" uid="uid://fya4rsn8pm3" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://beuyqfu67nflf" path="res://addons/brackeys-proto-controller-main/brackeys-proto-controller-main/proto_controller/proto_controller.gd" id="1_3vyb7"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_yj7vy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yj7vy"]
 
-[node name="player" type="CharacterBody3D" unique_id=230931713]
+[node name="Player" type="CharacterBody3D" unique_id=230931713]
 script = ExtResource("1_3vyb7")
+input_left = "input_left"
+input_right = "input_right"
+input_forward = "input_forward"
+input_back = "input_backward"
+input_jump = "input_jump"
+input_sprint = "input_sprint"
+input_freefly = "input_freefly"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1189683249]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -17,5 +24,7 @@ mesh = SubResource("CapsuleMesh_yj7vy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_yj7vy")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1352344808]
+[node name="Head" type="Node3D" parent="." unique_id=995052101]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.500416, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1352344808]
