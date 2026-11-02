@@ -4,16 +4,19 @@ const BOUNDARY_Y := 1
 const BOUNDARY_Z := 1
 @onready var box = preload("res://prefabs/rooms/box.tscn")
 var spawned_boxes: Array = []
+@export var pathlen :int
+@onready var pposition = $"../Player".global_position
 
 func _ready() -> void:
 	var pos = Vector3(0,0,0)
-	genPath(pos)
+	genPath(pos, pathlen)
 
 
-func genPath(pos):
-	for i in range(randf_range(100,150)):
+
+func genPath(pos, length):
+	for i in range(length):
 		var new_box = box.instantiate()
-		add_child.call_deferred(new_box)
+		add_child(new_box)
 		
 		spawned_boxes.append(new_box)
 		
@@ -21,34 +24,33 @@ func genPath(pos):
 		collision_node.shape = collision_node.shape.duplicate()
 		collision_node.shape.size = Vector3(20.0,7.5,20.0)
 		new_box.position += pos
-		pos = get_new_pos(pos)
+		pos = get_new_pos(pos, 20)
+	print(len(spawned_boxes))
 
 
-func get_new_pos(pos):
+func get_new_pos(pos, size):
 	var pos_new = Vector3(0,0,0)
-	var invalid = true		
+	var attempts = 0
 	if randi()%2 == 0:
-		while invalid:	
-			pos_new = pos + Vector3(20 *(randi_range(0,1)*2-1),randf_range(-5,1),0)
-			for boxes in spawned_boxes:
-				if pos_new.x == boxes.position.x and pos_new.z == boxes.position.z and abs(pos_new.y - boxes.position.y) < 10:
-					invalid = true
-					break
-				else:
-					invalid = false		
-			
+		while not check_colision(pos_new):
+			pos_new = pos + Vector3(size *(randi_range(0,1)*2-1),0,0)
+			attempts +=1
+			if attempts == 10:
+				break			
 	else:
-		while invalid:	
-			pos_new = pos + Vector3(0,randf_range(-5,1),20 *(randi_range(0,1)*2-1),)
-			for boxes in spawned_boxes:
-				if pos_new.x == boxes.position.x and pos_new.z == boxes.position.z and abs(pos_new.y - boxes.position.y) < 10:
-					invalid = true
-					break
-				else:
-					invalid = false		
+		while not check_colision(pos_new):
+			pos_new = pos + Vector3(0,0,size *(randi_range(0,1)*2-1))
+			attempts +=1
+			if attempts == 10:
+				break
 	return pos_new
 
 
-		
-func _process(delta: float) -> void:
+func check_colision(pos):
+	for boxes in spawned_boxes:
+		if pos == boxes.position:
+			return false
+	return true
+
+func _process(_delta: float) -> void:
 	pass

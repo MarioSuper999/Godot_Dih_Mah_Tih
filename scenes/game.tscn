@@ -31,3 +31,4 @@ can_freefly = true
 
 [node name="Rooms" type="Node3D" parent="." unique_id=88311267]
 script = ExtResource("3_lnu2h")
+pathlen = 100
