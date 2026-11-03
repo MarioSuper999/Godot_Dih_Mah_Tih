@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c5hkbw7v06nu8"]
 
-[ext_resource type="PackedScene" uid="uid://d2xrw5swb5xo0" path="res://scenes/player.tscn" id="1_uwrxv"]
-[ext_resource type="Script" uid="uid://bamyao7j7la52" path="res://scripts/procedural-generation.gd" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://cau53ipnrku4w" path="res://scenes/player.tscn" id="2_yqjtg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uwrxv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -24,10 +23,5 @@ environment = SubResource("Environment_lnu2h")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Player" parent="." unique_id=230931713 instance=ExtResource("1_uwrxv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2070694, 16.261408, 0.044442654)
-can_sprint = true
-can_freefly = true
-
-[node name="Rooms" type="Node3D" parent="." unique_id=88311267]
-script = ExtResource("3_lnu2h")
+[node name="Node3D" parent="." unique_id=1196026899 instance=ExtResource("2_yqjtg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23332262, 10.49604, -0.18941355)
