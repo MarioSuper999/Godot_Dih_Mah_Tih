@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d2xrw5swb5xo0"]
 
-[ext_resource type="Script" uid="uid://beuyqfu67nflf" path="res://addons/brackeys-proto-controller-main/brackeys-proto-controller-main/proto_controller/proto_controller.gd" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://beuyqfu67nflf" path="res://scripts/proto_controller.gd" id="1_3vyb7"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_yj7vy"]
 

@@ -1,6 +1,5 @@
 extends CharacterBody3D
 
-
 @export var can_move : bool = true
 @export var can_jump : bool = true
 @export var flashlight_on : bool = true
@@ -21,7 +20,6 @@ extends CharacterBody3D
 
 var mouse_captured : bool = true
 var look_rotation : Vector2
-var deltaTime: float = 0
 var target_rotation := Vector2.ZERO
 var smooth_rotation := Vector2.ZERO
 var weight : float = 1
@@ -45,7 +43,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		target_rotation.x = clamp(target_rotation.x,deg_to_rad(-85),deg_to_rad(85))
 	
 func _physics_process(delta: float) -> void:
-	deltaTime = delta
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 

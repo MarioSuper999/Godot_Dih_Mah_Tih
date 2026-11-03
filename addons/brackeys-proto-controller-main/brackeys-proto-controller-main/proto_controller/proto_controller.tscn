@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bs72ogkvdd7d6"]
 
-[ext_resource type="Script" uid="uid://beuyqfu67nflf" path="res://addons/brackeys-proto-controller-main/brackeys-proto-controller-main/proto_controller/proto_controller.gd" id="1_fy4em"]
+[ext_resource type="Script" uid="uid://beuyqfu67nflf" path="res://scripts/proto_controller.gd" id="1_fy4em"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iof21"]
 albedo_color = Color(0.91806, 0.575202, 0.222449, 1)
