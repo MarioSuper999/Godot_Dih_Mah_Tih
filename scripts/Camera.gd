@@ -1,22 +1,10 @@
 extends CharacterBody3D
+class_name CameraClass
 
-@export var can_move : bool = true
-@export var can_jump : bool = true
 @export var flashlight_on : bool = true
 @export var can_lerp : bool = true
-@export_group("Speeds")
 @export var mouse_sensitivity := 0.002
 @export var smooth_speed := 17.5
-@export var base_speed : float = 7.0
-@export var jump_velocity : float = 4.5
-@export var sprint_speed : float = 10.0
-@export_group("Input Actions")
-@export var input_left : String = "input_left"
-@export var input_right : String = "input_right"
-@export var input_forward : String = "input_forward"
-@export var input_back : String = "input_backward"
-@export var input_jump : String = "input_jump"
-@export var input_sprint : String = "input_sprint"
 
 var mouse_captured : bool = true
 var look_rotation : Vector2
@@ -26,7 +14,6 @@ var weight : float = 1
 
 @onready var head: Node3D = $Head
 @onready var collider: CollisionShape3D = $Collider
-
 
 func _ready() -> void:
 	look_rotation.y = rotation.y

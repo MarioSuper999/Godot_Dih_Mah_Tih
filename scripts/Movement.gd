@@ -19,7 +19,7 @@ extends CharacterBody3D
 @export var input_sprint : String = "input_sprint"
 
 var move_speed : float = 0.0
-var weight : float = 0.0
+var weight_velocity : float = 0.0
 var target_velocity : Vector3
 var smooth_velocity : Vector3
 
@@ -39,11 +39,11 @@ func _physics_process(delta: float) -> void:
 		move_speed = base_speed
 	if can_move:
 		if can_lerp:
-			weight = 1 - exp(-smooth_speed * delta)
+			weight_velocity = 1 - exp(-smooth_speed * delta)
 		var input_dir := Input.get_vector(input_left, input_right, input_forward, input_back)
 		var move_dir := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-		smooth_velocity.x = lerp(smooth_velocity,move_dir,weight)
-		smooth_velocity.z = lerp(smooth_velocity,move_dir,weight)
+		smooth_velocity.x = lerp(smooth_velocity.x,move_dir.x,weight_velocity)
+		smooth_velocity.z = lerp(smooth_velocity.z,move_dir.z,weight_velocity)
 		velocity.x = move_dir.x * move_speed
 		velocity.z = move_dir.z * move_speed
 	else:

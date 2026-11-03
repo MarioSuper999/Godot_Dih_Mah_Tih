@@ -50,7 +50,7 @@ shadow_enabled = true
 script = SubResource("GDScript_lbhrr")
 
 [node name="Node3D" parent="." unique_id=1196026899 instance=ExtResource("2_yqjtg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23332262, 1.9766798, -0.18941355)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23332262, 10.49604, -0.18941355)
 
 [node name="StaticBody3D" parent="." unique_id=603713482 instance=ExtResource("2_lnu2h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
