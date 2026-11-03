@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c5hkbw7v06nu8"]
 
-[ext_resource type="PackedScene" uid="uid://dutvo3impdcnu" path="res://prefabs/rooms/box.tscn" id="2_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://cau53ipnrku4w" path="res://scenes/Player-Character.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://cau53ipnrku4w" path="res://scenes/Player.tscn" id="2_yqjtg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uwrxv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -15,28 +14,6 @@ background_mode = 2
 sky = SubResource("Sky_yqjtg")
 glow_enabled = true
 
-[sub_resource type="GDScript" id="GDScript_lbhrr"]
-script/source = "extends Node
-const BOUNDARY_X := 100
-const BOUNDARY_Y := 75
-const BOUNDARY_Z := 100
-@onready var box = preload(\"res://prefabs/rooms/box.tscn\")
-
-func _ready() -> void:
-	for i in range(randf_range(50,75)):
-		
-		var new_box = box.instantiate()
-		add_child.call_deferred(new_box)
-		
-		var collision_node = new_box.get_node(\"CollisionShape3D\")
-		collision_node.shape = collision_node.shape.duplicate()
-		collision_node.shape.size = Vector3(20.0,7.5,20.0)
-		new_box.position += Vector3(randf_range(-BOUNDARY_X,BOUNDARY_X),randf_range(-BOUNDARY_Y,BOUNDARY_Y-50),randf_range(-BOUNDARY_Z,BOUNDARY_Z))
-		
-func _process(delta: float) -> void:
-	pass
-"
-
 [node name="Game" type="Node3D" unique_id=1776949651]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=998541414]
@@ -46,11 +23,5 @@ environment = SubResource("Environment_lnu2h")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Rooms" type="Node3D" parent="." unique_id=88311267]
-script = SubResource("GDScript_lbhrr")
-
 [node name="Node3D" parent="." unique_id=1196026899 instance=ExtResource("2_yqjtg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23332262, 10.49604, -0.18941355)
-
-[node name="StaticBody3D" parent="." unique_id=603713482 instance=ExtResource("2_lnu2h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)

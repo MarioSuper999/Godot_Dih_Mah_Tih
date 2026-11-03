@@ -8,7 +8,7 @@ extends CharacterBody3D
 @export_group("Speeds")
 @export var base_speed : float = 7.0
 @export var smooth_speed := 17.5
-@export var jump_velocity : float = 4.5
+@export var jump_velocity : float = 3
 @export var sprint_speed : float = 10.0
 @export_group("Input Actions")
 @export var input_left : String = "input_left"
