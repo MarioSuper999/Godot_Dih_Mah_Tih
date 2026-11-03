@@ -14,6 +14,10 @@ background_mode = 2
 sky = SubResource("Sky_yqjtg")
 glow_enabled = true
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_yj7vy"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yj7vy"]
+
 [node name="Game" type="Node3D" unique_id=1776949651]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=998541414]
@@ -24,4 +28,13 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="Node3D" parent="." unique_id=1196026899 instance=ExtResource("2_yqjtg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23332262, 10.49604, -0.18941355)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23332262, 0.67622757, -0.18941355)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1752291491]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=976992545]
+shape = SubResource("WorldBoundaryShape3D_yj7vy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=479322863]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7627835, 1.210145, -6.724827)
+mesh = SubResource("CylinderMesh_yj7vy")
