@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://c5hkbw7v06nu8"]
 
+[ext_resource type="Script" uid="uid://c5c4y6ce5ppea" path="res://scripts/Game.gd" id="1_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://ba3vtpoeac6lw" path="res://scenes/da_monsta.tscn" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://cau53ipnrku4w" path="res://scenes/player.tscn" id="2_yqjtg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uwrxv"]
@@ -14,7 +16,10 @@ background_mode = 2
 sky = SubResource("Sky_yqjtg")
 glow_enabled = true
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_yj7vy"]
+
 [node name="Game" type="Node3D" unique_id=1776949651]
+script = ExtResource("1_lnu2h")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=998541414]
 environment = SubResource("Environment_lnu2h")
@@ -23,5 +28,11 @@ environment = SubResource("Environment_lnu2h")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Node3D" parent="." unique_id=1196026899 instance=ExtResource("2_yqjtg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23332262, 10.49604, -0.18941355)
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=921410912]
+navigation_mesh = SubResource("NavigationMesh_yj7vy")
+
+[node name="Da_Monsta" parent="." unique_id=1269639112 instance=ExtResource("2_lnu2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7846398, 0)
+
+[node name="Player" parent="." unique_id=1196026899 instance=ExtResource("2_yqjtg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7730637, 0, 8.801432)

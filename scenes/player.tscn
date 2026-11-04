@@ -6,7 +6,7 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hijj4"]
 
-[node name="Node3D" type="CharacterBody3D" unique_id=1196026899]
+[node name="Player" type="CharacterBody3D" unique_id=1196026899]
 script = ExtResource("1_gngvk")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1131074661]
