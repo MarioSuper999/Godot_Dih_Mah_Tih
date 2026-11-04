@@ -4,7 +4,6 @@ extends CharacterBody3D
 @export var can_jump : bool = true
 @export var can_sprint : bool = true
 @export var can_lerp : bool = true
-@export var flashlight_on : bool = true
 @export_group("Speeds")
 @export var base_speed : float = 7.0
 @export var smooth_speed := 17.5
@@ -22,6 +21,7 @@ var move_speed : float = 0.0
 var weight_velocity : float = 0.0
 var target_velocity : Vector3
 var smooth_velocity : Vector3
+var flashlight_on : bool = true
 
 @onready var head: Node3D = $Head
 @onready var collider: CollisionShape3D = $Collider
