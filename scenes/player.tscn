@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cau53ipnrku4w"]
+[gd_scene format=3 uid="uid://d2xrw5swb5xo0"]
 
 [ext_resource type="Script" uid="uid://dl2e54uksit5x" path="res://scripts/Player-Scripts.gd" id="1_gngvk"]
 
@@ -22,3 +22,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.500416, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=359767302]
 current = true
+
+[node name="RHand" type="Node3D" parent="." unique_id=444554230]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59628296, 1.072876, -1.0580444)

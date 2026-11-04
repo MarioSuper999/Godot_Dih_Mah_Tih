@@ -32,6 +32,7 @@ var weight_velocity : float = 1.0
 
 @onready var head: Node3D = $Head
 @onready var collider: CollisionShape3D = $Collider
+@onready var rhand: Node3D = %RHand
 
 func _ready() -> void:
 	look_rotation.y = rotation.y
