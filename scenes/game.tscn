@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c5c4y6ce5ppea" path="res://scripts/Game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://ba3vtpoeac6lw" path="res://scenes/da_monsta.tscn" id="2_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://cau53ipnrku4w" path="res://scenes/player.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://d2xrw5swb5xo0" path="res://scenes/player.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://cs7nf6c1kl7b7" path="res://scenes/item.tscn" id="4_lbhrr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uwrxv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -36,3 +37,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7846398, 0)
 
 [node name="Player" parent="." unique_id=1196026899 instance=ExtResource("2_yqjtg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7730637, 0, 8.801432)
+
+[node name="Item" parent="." unique_id=1793539674 instance=ExtResource("4_lbhrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7809863, -0.029974937, 3.7128124)
