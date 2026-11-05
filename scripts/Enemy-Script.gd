@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 		#if abs(target_rotation - rotation.y) > deg_to_rad(60):
 			#rotation_speed *= move_toward(1,5,0.2)
 		#rotation.y = move_toward(rotation.y,target_rotation,delta * rotation_speed)
-		print(new_velocity,next_location,current_location,move_speed)
+
 	move_and_slide()
 	
 # pathfinding functions here:
