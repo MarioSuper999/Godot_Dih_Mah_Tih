@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d2xrw5swb5xo0" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://ci3usjehu5y10" path="res://scenes/item.tscn" id="4_lbhrr"]
 [ext_resource type="Script" uid="uid://bamyao7j7la52" path="res://scripts/procedural-generation.gd" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://blf0cik0qu4j8" path="res://scenes/Inventar.tscn" id="6_p57ef"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uwrxv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -45,3 +46,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7809863, 4.591441, 3.71281
 [node name="Rooms" type="Node3D" parent="." unique_id=1900144105]
 script = ExtResource("5_iywne")
 pathlen = 100
+
+[node name="Control" parent="." unique_id=950159955 instance=ExtResource("6_p57ef")]

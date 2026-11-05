@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://blf0cik0qu4j8"]
+
+[ext_resource type="Texture2D" uid="uid://41ytmryv1f63" path="res://assets/pngegg.png" id="1_rsc1w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vt5hi"]
+
+[node name="Control" type="Control" unique_id=950159955]
+custom_maximum_size = Vector2(0, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1975207399]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 160.0
+offset_right = 91.0
+offset_bottom = 200.0
+
+[node name="Panel4" type="Panel" parent="." unique_id=577853520]
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 746.0
+scale = Vector2(0.6, 0.6)
+
+[node name="Panel" type="Panel" parent="Panel4" unique_id=1140430758]
+z_index = 1
+layout_mode = 0
+offset_left = 123.333374
+offset_top = 314.99994
+offset_right = 163.33337
+offset_bottom = 354.99994
+scale = Vector2(1.56, 1.56)
+theme_override_styles/panel = SubResource("StyleBoxFlat_vt5hi")
+
+[node name="Panel2" type="Panel" parent="Panel4" unique_id=87163390]
+z_index = 1
+layout_mode = 0
+offset_left = 330.0
+offset_top = 315.0
+offset_right = 370.0
+offset_bottom = 355.0
+scale = Vector2(1.56, 1.56)
+theme_override_styles/panel = SubResource("StyleBoxFlat_vt5hi")
+
+[node name="Panel3" type="Panel" parent="Panel4" unique_id=1724562904]
+z_index = 1
+layout_mode = 0
+offset_left = 226.66663
+offset_top = 204.99998
+offset_right = 266.66663
+offset_bottom = 245.0
+scale = Vector2(1.56, 1.56)
+theme_override_styles/panel = SubResource("StyleBoxFlat_vt5hi")
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel4" unique_id=1238808428]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Panel4/CenterContainer" unique_id=1590939899]
+layout_mode = 2
+texture = ExtResource("1_rsc1w")
