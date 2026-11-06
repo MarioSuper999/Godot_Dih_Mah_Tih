@@ -1,4 +1,5 @@
 extends Node
+signal generation_finished
 const BOUNDARY_X := 1
 const BOUNDARY_Y := 1
 const BOUNDARY_Z := 1
@@ -10,7 +11,7 @@ var spawned_boxes: Array = []
 func _ready() -> void:
 	var pos = Vector3(0,0,0)
 	genPath(pos, pathlen)
-
+	emit_signal("generation_finished")
 
 
 func genPath(pos, length):
