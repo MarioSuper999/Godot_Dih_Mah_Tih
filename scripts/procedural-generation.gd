@@ -11,7 +11,9 @@ var spawned_boxes: Array = []
 func _ready() -> void:
 	var pos = Vector3(0,0,0)
 	genPath(pos, pathlen)
+	await $"..".ready
 	emit_signal("generation_finished")
+	
 
 
 func genPath(pos, length):
